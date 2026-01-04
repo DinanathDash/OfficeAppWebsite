@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import FirebaseAnalytics from "@/components/FirebaseAnalytics";
 
 const fontSerif = Playfair_Display({
   subsets: ["latin"],
@@ -11,7 +12,36 @@ const fontSerif = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "OfficeApp - Plan Your Productivity",
-  description: "Secure and portable document management.",
+  description: "Secure and portable document management. Handle PDF, Word, Excel, and PPT files with our all-in-one Office Suite.",
+  metadataBase: new URL("https://office-app-website.vercel.app"), // Placeholder, update locally or via env if needed
+  openGraph: {
+    title: "OfficeApp - All-in-One Office Suite",
+    description: "View and edit PDF, Word, Excel, and PPT files on the go. The ultimate productivity tool for your mobile device.",
+    url: "https://office-app-website.vercel.app",
+    siteName: "OfficeApp",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "OfficeApp Preview",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "OfficeApp - Boost Your Productivity",
+    description: "The complete mobile office suite for all your document needs.",
+    images: ["/opengraph-image.png"],
+    creator: "@OfficeApp",
+  },
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({
@@ -32,6 +62,7 @@ export default function RootLayout({
           fontSerif.variable
         )}
       >
+        <FirebaseAnalytics />
         {children}
       </body>
     </html>
