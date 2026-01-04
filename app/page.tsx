@@ -38,6 +38,7 @@ export default function Home() {
             height={650}
             className="w-[249px] h-[650px] drop-shadow-upright"
             priority
+            placeholder="empty"
           />
         </div>
       </div>
@@ -104,6 +105,7 @@ export default function Home() {
                   height={1600}
                   className="w-full h-auto drop-shadow-upright"
                   priority
+                  placeholder="empty"
                 />
               </div>
             </div>
