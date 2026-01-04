@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Folder, Star } from "lucide-react";
+import mockup from "../public/mockup.png";
 
 export default function Home() {
   return (
@@ -97,8 +98,8 @@ export default function Home() {
             <div className="lg:hidden w-full flex justify-center mt-0 mb-12">
               <div className="relative w-[280px]">
                 <Image
-                  src="/Pixel%2010%20Pro%206.3%20inch%20moonstone%20left.png"
-                  alt="Pixel 10 Pro Mockup"
+                  src={mockup}
+                  alt="Mockup"
                   width={800}
                   height={1600}
                   className="w-full h-auto drop-shadow-2xl"
